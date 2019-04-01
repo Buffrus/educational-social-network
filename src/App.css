@@ -13,6 +13,10 @@
 }
 
 
-
+.app-wrapper-content {
+	grid-area: c;
+	padding: 10px;
+	background-color: #e8e8e8;
+}
 
 
