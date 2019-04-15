@@ -2,7 +2,7 @@ import React from 'react';
 import classes from './MyPosts.module.css';
 import Post from './Post/Post';
 
-let postsData = [
+let posts = [
   {
     id: 1,
     message: "Hello, World! It's my first post.",
@@ -23,7 +23,11 @@ let postsData = [
     message: "You can make the world a better place.",
     like_count: 16
   }
-]
+];
+
+let postsElements = posts.map( (post) => {
+  return <Post message={post.message} like_count={post.like_count} />
+});
 
 const MyPosts = () => {
   return (
@@ -40,10 +44,7 @@ const MyPosts = () => {
         </div>
       </div>
       <div className={classes.posts}>
-        <Post message={postsData[0].message} like_count={postsData[0].like_count} />
-        <Post message={postsData[1].message} like_count={postsData[1].like_count} />
-        <Post message={postsData[2].message} like_count={postsData[2].like_count} />
-        <Post message={postsData[3].message} like_count={postsData[3].like_count} />
+        {postsElements}
       </div>
     </div>
   )
